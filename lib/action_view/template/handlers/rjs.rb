@@ -5,7 +5,7 @@ module ActionView
       class_attribute :default_format
       self.default_format = Mime[:js]
 
-      if Rails::VERSION::MAJOR == 6
+      if Rails::VERSION::MAJOR >= 6
         def call(template, source)
           "update_page do |page|;#{source}\nend"
         end
